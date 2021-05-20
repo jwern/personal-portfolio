@@ -69,6 +69,58 @@
           <div class="project">
             <div class="project-image" style="background-image: url('images/wholly_veggie_desktop_orig_wide.png');"></div>
             <div class="project-name">Wholly Veggie</div>
+            <!-- Modal button -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#whollyVeggieDesktopModal">
+              Desktop View
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="whollyVeggieDesktopModal" tabindex="-1" aria-labelledby="whollyVeggieDesktopModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-xl">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="whollyVeggieDesktopModalLabel">
+                      Wholly Veggie - Desktop
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <img class="img-fluid" src="images/wholly_veggie_desktop_orig_wide.png" />
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Modal -->
+            <!-- Modal button -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#whollyVeggieMobileModal">
+              Mobile View
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="whollyVeggieMobileModal" tabindex="-1" aria-labelledby="whollyVeggieMobileModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="whollyVeggieMobileModalLabel">
+                      Wholly Veggie - Mobile
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <img class="img-fluid" src="images/wholly_veggie_mobile_orig.png" />
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Modal -->
             <div class="project-info"></div>
           </div>
         </div>
@@ -135,21 +187,48 @@
           <div class="project">
             <div class="project-image" style="background-image: url('images/weather_app_desktop.png')"></div>
             <div class="project-name">Weather App</div>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#weatherAppModal">
+            <!-- Modal button -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#weatherAppDesktopModal">
               Desktop View
             </button>
             <!-- Modal -->
-            <div class="modal fade" id="weatherAppModal" tabindex="-1" aria-labelledby="weatherAppModalLabel" aria-hidden="true">
+            <!-- <div class="modal fade" id="weatherAppDesktopModal" tabindex="-1" aria-labelledby="weatherAppDesktopModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-xl">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="weatherAppModalLabel">
-                      Weather App
+                    <h5 class="modal-title" id="weatherAppDesktopModalLabel">
+                      Weather App - Desktop
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
                     <img class="img-fluid" src="images/weather_app_desktop.png" />
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <!-- End Modal -->
+            <!-- Modal button -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#weatherAppMobileModal">
+              Mobile View
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="weatherAppMobileModal" tabindex="-1" aria-labelledby="weatherAppMobileModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="weatherAppMobileModalLabel">
+                      Weather App - Mobile
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <img class="img-fluid" src="images/weather_app_mobile.png" />
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
@@ -171,11 +250,8 @@
         <div class="col">Right footer column</div>
       </div>
     </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" 
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./index.js"></script>
   </body>
 </html>
