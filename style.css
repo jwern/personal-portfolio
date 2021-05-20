@@ -13,24 +13,36 @@ nav.navbar {
 .navbar-nav {
   max-width: max-content;
 }
-.project {
+/* OLD .project {
   width: 100%;
   min-height: 200px;
-  border: 2px solid black;
+  border-left: 4px solid paleturquoise;
+  border-right: 4px solid paleturquoise;
+  border-radius: 40px;
+  overflow: hidden;
   cursor: pointer;
-}
-
-#tic {
-  background-image: url("images/tictactoe_desktop_mid_game.png");
+} */
+/* OLD .project-image {
+  min-height: 200px;
   background-size: cover;
   background-position: center;
-}
-
-#tac {
-  background-image: url("images/tictactoe_mobile_mid_game.png");
-  background-size: contain;
-  background-position: center;
   background-repeat: no-repeat;
+} */
+.project {
+  border: 1px solid black;
+}
+.project-image {
+  width: 100%;
+  background: transparent no-repeat top;
+  background-size: cover;
+}
+.project-image.position-left {
+  background-position: left;
+}
+.project-image:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
 }
 .footer {
   background-color: paleturquoise;
