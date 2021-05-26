@@ -1,10 +1,10 @@
+import { buildHeaderWithData } from "./header.js";
 import { createGalleryFromTemplate } from "./buildFromTemplate.js";
 import { createGalleryFromScratch } from "./alternativeTemplateBuild.js";
 import { professionalProjects, personalProjects } from "./projectsList.js";
 import "./style.scss";
 
-// IIFE to load gallery of projects
-const createGalleryOnLoad = (function () {
+const createProjectGallery = function () {
   // If browser supports <template>, use template
   if ("content" in document.createElement("template")) {
     createGalleryFromTemplate(professionalProjects, personalProjects);
@@ -12,4 +12,10 @@ const createGalleryOnLoad = (function () {
   } else {
     createGalleryFromScratch(professionalProjects, personalProjects);
   }
+};
+
+// IIFE to build & load all non-hard-coded elements
+const buildOnLoad = (function () {
+  buildHeaderWithData();
+  createProjectGallery();
 })();
