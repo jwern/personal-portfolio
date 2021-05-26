@@ -16,13 +16,17 @@ const setNavbarBrand = function () {
 
 const buildNavLinks = function () {
   const navUL = document.getElementById("nav-links");
+
   for (let link in navLinks) {
     const navLI = document.createElement("li");
     navLI.classList.add("nav-item");
 
-    // This innerHTML is so we can encode our email to prevent listing it directly (spam protection)
-    navLI.innerHTML = `<a href="${navLinks[link]}" class="nav-link">${link}</a>`;
+    const navAnchor = document.createElement("a");
+    navAnchor.classList.add("nav-link");
+    navAnchor.innerText = link;
+    navAnchor.href = `${navLinks[link]}`;
 
+    navLI.appendChild(navAnchor);
     navUL.appendChild(navLI);
   }
 };

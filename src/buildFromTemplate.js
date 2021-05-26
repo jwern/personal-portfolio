@@ -26,6 +26,16 @@ const createGalleryCard = function (project, projectObject) {
   topTitle.innerText = projectObject.title;
 };
 
+const addProjectInfo = function (project, projectObject) {
+  const infoDiv = project.querySelector(".project-info");
+  const infoLink = document.createElement("a");
+
+  infoLink.innerText = projectObject.externalLink;
+  infoLink.href = projectObject.externalUrl;
+
+  infoDiv.appendChild(infoLink);
+};
+
 // Template Method - Template cloning + card creation
 const copyProjectTemplate = function (projectObject, rowName) {
   // Project Top
@@ -36,6 +46,8 @@ const copyProjectTemplate = function (projectObject, rowName) {
 
   createModal(project, projectObject, "desktop");
   createModal(project, projectObject, "mobile");
+
+  addProjectInfo(project, projectObject);
 
   const projectsRow = document.getElementById(rowName);
   projectsRow.appendChild(project);

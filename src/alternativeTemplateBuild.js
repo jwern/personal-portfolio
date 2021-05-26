@@ -59,7 +59,9 @@ const buildProjectColumns = function (projectObject, rowName) {
         </div>
       </div>
       <!-- End Modal -->
-      <div class="project-info"></div>
+      <div class="project-info">
+        <a href="${projectObject.externalUrl}">${projectObject.externalLink}</a>
+      </div>
     </div>
   `;
 
