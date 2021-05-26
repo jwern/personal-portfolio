@@ -1,2 +1,6 @@
 unused_images/
-galleryBuild.js
+galleryBuild_UNUSED.js
+contactInfo.js
+projectsList.js
+node_modules/
+dist/main.js
