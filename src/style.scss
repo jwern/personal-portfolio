@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&&family=Yellowtail&display=swap");
+
 $primary-turquoise: #afeeee;
 $accent-violet: #4262a6;
 $accent-pink: #d753a2;
@@ -7,7 +9,6 @@ $accent-pink: #d753a2;
   text-decoration: none;
   box-shadow: 0px 2px 1px -1px $accent-pink;
   -webkit-box-shadow: 0px 2px 1px -1px $accent-pink;
-  -moz-box-shadow: 0px 2px 1px -1px $accent-pink;
   &:hover,
   &:focus {
     text-decoration: none;
@@ -23,27 +24,41 @@ $accent-pink: #d753a2;
   &:focus {
     box-shadow: 0px 2px 1px -1px $accent-pink;
     -webkit-box-shadow: 0px 2px 1px -1px $accent-pink;
-    -moz-box-shadow: 0px 2px 1px -1px $accent-pink;
   }
 }
 
+@mixin header-footer-shadow($direction) {
+  box-shadow: 0px $direction 1px -1px rgba(66, 98, 166, 0.5);
+  -webkit-box-shadow: 0px $direction 1px -1px rgba(66, 98, 166, 0.5);
+}
+
 html {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 18px;
   position: relative;
   min-height: 100%;
+  @media screen and (max-width: 576px) {
+    font-size: 16px;
+  }
 }
 body {
-  background-color: #fbf9f9;
+  font-size: 1rem;
+  font-family: "Hind Siliguri", sans-serif;
+  background-color: scale-color($primary-turquoise, $lightness: 90%);
 }
 nav.navbar {
   background: $primary-turquoise;
-  box-shadow: 0px 3px 1px -1px rgba(66, 98, 166, 0.75);
-  -webkit-box-shadow: 0px 3px 1px -1px rgba(66, 98, 166, 0.75);
-  -moz-box-shadow: 0px 3px 1px -1px rgba(66, 98, 166, 0.75);
+  @include header-footer-shadow(3px);
   @media screen and (max-width: 576px) {
     position: fixed;
     top: 0;
     z-index: 1020;
     width: 100%;
+  }
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-family: "Yellowtail", cursive;
+    transform: rotate(-8deg);
   }
   .navbar-toggler-icon {
     // accent-violet version of mobile menu:
@@ -56,7 +71,6 @@ nav.navbar {
   .navbar-nav {
     max-width: max-content;
     .nav-link {
-      // color: #9c6190;
       @include links-nav();
       padding: 0;
       margin: 0.5rem;
@@ -78,10 +92,9 @@ hr.heading-underline {
 }
 .project {
   border: 2px solid $primary-turquoise;
-  // border-top: none;
-  // border-bottom: none;
   border-radius: 0.25rem;
   overflow: hidden;
+  background-color: white;
   .project-spacer {
     margin: 1rem;
   }
@@ -107,7 +120,6 @@ hr.heading-underline {
     opacity: 0.5;
   }
   button.btn-primary {
-    // background-color: #2e427c;
     background-color: $accent-violet;
     border-color: $accent-violet;
     &:hover {
@@ -135,11 +147,12 @@ hr.heading-underline {
     }
   }
 }
+#footer-spacer {
+  min-height: 3rem;
+}
 .footer {
   background-color: $primary-turquoise;
-  box-shadow: 0px -3px 1px -1px rgba(66, 98, 166, 0.75);
-  -webkit-box-shadow: 0px -3px 1px -1px rgba(66, 98, 166, 0.75);
-  -moz-box-shadow: 0px -3px 1px -1px rgba(66, 98, 166, 0.75);
+  @include header-footer-shadow(-3px);
   padding-top: 12px;
   padding-bottom: 12px;
   position: absolute;
