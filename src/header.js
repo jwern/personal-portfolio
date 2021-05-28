@@ -3,6 +3,8 @@ import {
   navBrand, // String or HTML as template string
   navLinks, // Object with link text as key and link URL as value, e.g. { navText: url }
   introParagraph, // String or template string
+  footerInfo, // String or template string
+  footerCopyright, // String or template string
 } from "./contactInfo.js";
 
 const setPageTitle = function () {
@@ -37,11 +39,20 @@ const addIntroParagraph = function () {
   introContainer.innerText = introParagraph;
 };
 
+const addFooterInfo = function () {
+  const footerTrademark = document.getElementById("footer-left");
+  footerTrademark.innerHTML = footerCopyright;
+
+  const footerCredits = document.getElementById("footer-right");
+  footerCredits.innerHTML = footerInfo;
+};
+
 const buildHeaderWithData = function () {
   setPageTitle();
   setNavbarBrand();
   buildNavLinks();
   addIntroParagraph();
+  addFooterInfo();
 };
 
 export { buildHeaderWithData };
