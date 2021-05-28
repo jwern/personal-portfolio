@@ -43,7 +43,7 @@ const addFooterInfo = function () {
   const footerTrademark = document.getElementById("footer-left");
   footerTrademark.innerHTML = footerCopyright;
 
-  const footerCredits = document.getElementById("footer-right");
+  const footerCredits = document.getElementById("footer-credits");
   footerCredits.innerHTML = footerInfo;
 };
 

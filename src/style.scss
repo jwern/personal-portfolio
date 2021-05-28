@@ -2,6 +2,31 @@ $primary-turquoise: #afeeee;
 $accent-violet: #4262a6;
 $accent-pink: #d753a2;
 
+@mixin links-body {
+  color: $accent-pink;
+  text-decoration: none;
+  box-shadow: 0px 2px 1px -1px $accent-pink;
+  -webkit-box-shadow: 0px 2px 1px -1px $accent-pink;
+  -moz-box-shadow: 0px 2px 1px -1px $accent-pink;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    box-shadow: none;
+  }
+}
+
+@mixin links-nav {
+  color: $accent-pink;
+  text-decoration: none;
+  font-weight: 700;
+  &:hover,
+  &:focus {
+    box-shadow: 0px 2px 1px -1px $accent-pink;
+    -webkit-box-shadow: 0px 2px 1px -1px $accent-pink;
+    -moz-box-shadow: 0px 2px 1px -1px $accent-pink;
+  }
+}
+
 html {
   position: relative;
   min-height: 100%;
@@ -10,7 +35,10 @@ body {
   background-color: #fbf9f9;
 }
 nav.navbar {
-  background-color: $primary-turquoise;
+  background: $primary-turquoise;
+  box-shadow: 0px 3px 1px -1px rgba(66, 98, 166, 0.75);
+  -webkit-box-shadow: 0px 3px 1px -1px rgba(66, 98, 166, 0.75);
+  -moz-box-shadow: 0px 3px 1px -1px rgba(66, 98, 166, 0.75);
   @media screen and (max-width: 576px) {
     position: fixed;
     top: 0;
@@ -29,7 +57,9 @@ nav.navbar {
     max-width: max-content;
     .nav-link {
       // color: #9c6190;
-      color: $accent-pink;
+      @include links-nav();
+      padding: 0;
+      margin: 0.5rem;
     }
   }
 }
@@ -38,8 +68,23 @@ nav.navbar {
     padding-top: 60px;
   }
 }
+hr.heading-underline {
+  width: 12rem;
+  max-width: 75%;
+  height: 0.5rem;
+  border-radius: 4px;
+  color: $primary-turquoise;
+  opacity: 1;
+}
 .project {
-  border: 1px solid $primary-turquoise;
+  border: 2px solid $primary-turquoise;
+  // border-top: none;
+  // border-bottom: none;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  .project-spacer {
+    margin: 1rem;
+  }
   .project-image {
     width: 100%;
     background: transparent no-repeat top;
@@ -53,6 +98,14 @@ nav.navbar {
       padding-bottom: 100%;
     }
   }
+  hr.project-title-underline {
+    width: 6rem;
+    text-align: center;
+    height: 0.5rem;
+    border-radius: 4px;
+    color: $accent-violet;
+    opacity: 0.5;
+  }
   button.btn-primary {
     // background-color: #2e427c;
     background-color: $accent-violet;
@@ -62,18 +115,12 @@ nav.navbar {
     }
   }
   .project-info {
-    padding: 10px;
+    // padding: 10px;
     a {
-      color: $accent-pink;
-      text-decoration: none;
-      box-shadow: 0px 2px 1px -1px $accent-pink;
-      -webkit-box-shadow: 0px 2px 1px -1px $accent-pink;
-      -moz-box-shadow: 0px 2px 1px -1px $accent-pink;
+      @include links-body();
     }
     &:hover {
       a {
-        text-decoration: none;
-        box-shadow: none;
         margin-left: 1rem;
       }
       &::after {
@@ -90,7 +137,16 @@ nav.navbar {
 }
 .footer {
   background-color: $primary-turquoise;
+  box-shadow: 0px -3px 1px -1px rgba(66, 98, 166, 0.75);
+  -webkit-box-shadow: 0px -3px 1px -1px rgba(66, 98, 166, 0.75);
+  -moz-box-shadow: 0px -3px 1px -1px rgba(66, 98, 166, 0.75);
+  padding-top: 12px;
+  padding-bottom: 12px;
   position: absolute;
   bottom: 0;
   left: 0;
+  .footer-link {
+    border-radius: unset;
+    @include links-nav();
+  }
 }
