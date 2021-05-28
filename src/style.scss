@@ -74,6 +74,10 @@ nav.navbar {
       @include links-nav();
       padding: 0;
       margin: 0.5rem;
+      @media screen and (max-width: 567px) {
+        max-width: max-content;
+        margin-left: auto;
+      }
     }
   }
 }
