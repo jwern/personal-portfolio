@@ -40,6 +40,14 @@ $accent-pink: #d753a2;
   }
 }
 
+@mixin tech-details-visible() {
+  visibility: visible;
+  background-color: $accent-violet;
+  padding: 0.5rem;
+  transition: visibility 0.2s linear, background-color 0.25s linear;
+  z-index: 30;
+}
+
 html {
   font-family: "Hind Siliguri", sans-serif;
   font-size: 18px;
@@ -138,14 +146,16 @@ hr.heading-underline {
 
     &:hover,
     &:focus,
-    &:active,
-    &.display-tech {
+    &:active {
       .project-tech {
-        visibility: visible;
-        background-color: $accent-violet;
-        padding: 0.5rem;
-        transition: visibility 0.2s linear, background-color 0.25s linear;
-        z-index: 30;
+        @include tech-details-visible();
+      }
+    }
+    @media (hover: none) and (pointer: coarse) {
+      .display-tech {
+        .project-tech {
+          @include tech-details-visible();
+        }
       }
     }
   }
