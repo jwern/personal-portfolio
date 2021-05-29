@@ -114,6 +114,8 @@ hr.heading-underline {
     width: 100%;
     background: transparent no-repeat top;
     background-size: cover;
+    position: relative;
+    cursor: help;
     &.position-left {
       background-position: left;
     }
@@ -121,6 +123,27 @@ hr.heading-underline {
       content: "";
       display: block;
       padding-bottom: 100%;
+    }
+    .project-tech {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      border-radius: 4px;
+      visibility: hidden;
+      transition: visibility 0.2s linear, background-color 0.25s linear;
+      color: white;
+    }
+    &:hover,
+    &:focus {
+      .project-tech {
+        visibility: visible;
+        background-color: $accent-violet;
+        padding: 0.5rem;
+        transition: visibility 0.2s linear, background-color 0.25s linear;
+        z-index: 30;
+      }
     }
   }
   hr.project-title-underline {

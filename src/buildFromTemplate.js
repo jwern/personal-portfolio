@@ -22,6 +22,9 @@ const createGalleryCard = function (project, projectObject) {
   const desktopImageTop = project.querySelector(".project-image");
   desktopImageTop.style.backgroundImage = `url(${projectObject.desktopUrl})`;
 
+  const techDetails = project.querySelector(".project-tech");
+  techDetails.innerText = projectObject.techDetails;
+
   const topTitle = project.querySelector(".project-name");
   topTitle.innerText = projectObject.title;
 };
