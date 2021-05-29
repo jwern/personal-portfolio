@@ -9,7 +9,7 @@ const buildProjectColumns = function (projectObject, rowName) {
 
   const projectColumnInner = `
     <div class="project">
-      <div class="project-image" style="background-image:url(${projectObject.desktopUrl})"></div>
+      <div class="project-image" style="background-image:url(${projectObject.desktopUrl})"><div class="project-tech">${projectObject.techDetails}</div></div>
       <div class="project-name">${projectObject.title}</div>
       <!-- Modal button -->
       <button type="button" id="targetButton-desktop" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#${projectObject.id}-desktop">

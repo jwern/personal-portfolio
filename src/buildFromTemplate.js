@@ -21,6 +21,9 @@ const createModal = function (project, projectObject, size) {
 const createGalleryCard = function (project, projectObject) {
   const desktopImageTop = project.querySelector(".project-image");
   desktopImageTop.style.backgroundImage = `url(${projectObject.desktopUrl})`;
+  desktopImageTop.addEventListener("click", () => {
+    desktopImageTop.classList.toggle("display-tech");
+  });
 
   const techDetails = project.querySelector(".project-tech");
   techDetails.innerText = projectObject.techDetails;

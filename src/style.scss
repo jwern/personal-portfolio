@@ -135,8 +135,11 @@ hr.heading-underline {
       transition: visibility 0.2s linear, background-color 0.25s linear;
       color: white;
     }
+
     &:hover,
-    &:focus {
+    &:focus,
+    &:active,
+    &.display-tech {
       .project-tech {
         visibility: visible;
         background-color: $accent-violet;
