@@ -1,6 +1,6 @@
 // Template Method - Modal creation
 const createModal = function (project, projectObject, size) {
-  const button = project.getElementById(`targetButton-${size}`);
+  const button = project.querySelector(`.targetButton-${size}`);
   button.setAttribute("data-bs-target", `#${projectObject.id}Modal-${size}`);
 
   const modal = project.getElementById(`placeholderTarget-${size}`);
@@ -14,7 +14,7 @@ const createModal = function (project, projectObject, size) {
   heading.id = `${projectObject.id}ModalLabel-${size}`;
   heading.innerText = `${projectObject.title} - ${size}`;
 
-  const image = project.getElementById(`modalImage-${size}`);
+  const image = project.querySelector(`.modalImage-${size}`);
   image.src = projectObject[`${size}Url`];
 };
 

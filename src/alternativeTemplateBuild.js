@@ -12,7 +12,7 @@ const buildProjectColumns = function (projectObject, rowName) {
       <div class="project-image" style="background-image:url(${projectObject.desktopUrl})"><div class="project-tech">${projectObject.techDetails}</div></div>
       <div class="project-name">${projectObject.title}</div>
       <!-- Modal button -->
-      <button type="button" id="targetButton-desktop" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#${projectObject.id}-desktop">
+      <button type="button" class="targetButton-desktop btn btn-primary" data-bs-toggle="modal" data-bs-target="#${projectObject.id}-desktop">
         Desktop View
       </button>
       <!-- Desktop Modal -->
@@ -24,7 +24,7 @@ const buildProjectColumns = function (projectObject, rowName) {
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <img class="img-fluid" id="modalImage-desktop" src=${projectObject.desktopUrl} />
+              <img class="img-fluid modalImage-desktop" src=${projectObject.desktopUrl} />
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
@@ -36,7 +36,7 @@ const buildProjectColumns = function (projectObject, rowName) {
       </div>
       <!-- End Modal -->
       <!-- Modal button -->
-      <button type="button" id="targetButton-mobile" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#${projectObject.id}-mobile">
+      <button type="button" class="targetButton-desktop btn btn-primary" data-bs-toggle="modal" data-bs-target="#${projectObject.id}-mobile">
         Mobile View
       </button>
       <!-- Mobile Modal -->
@@ -48,7 +48,7 @@ const buildProjectColumns = function (projectObject, rowName) {
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <img class="img-fluid" id="modalImage-mobile" src=${projectObject.mobileUrl} />
+              <img class="img-fluid modalImage-mobile" src=${projectObject.mobileUrl} />
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
