@@ -14,8 +14,7 @@ const createProjectGallery = function () {
   }
 };
 
-// IIFE to build & load all non-hard-coded elements
-const buildOnLoad = (function () {
+document.addEventListener("DOMContentLoaded", function () {
   buildHeaderWithData();
   createProjectGallery();
-})();
+});
