@@ -4,7 +4,9 @@ All entries except footerInfo (credits) should be updated to display your person
 // Title of the page / will appear on the browser tab
 const webPageTitle = "My Portfolio";
 
-// Logo - just a string right now
+// Logo - just a string, or you can use an image with
+// const navBrand = `<img src="pathToImage.ext">`;
+// But there is no styling applied to an image logo by default
 const navBrand = "My Logo";
 
 // External links to your relevant sites; the key name will be the link text
