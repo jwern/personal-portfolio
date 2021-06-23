@@ -1,6 +1,5 @@
-unused_images/
 galleryBuild_UNUSED.js
-projectsList.js
 node_modules/
 dist/main.js
-images/
+dist/
+dist/index.html

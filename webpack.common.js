@@ -12,7 +12,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         {
-          from: __dirname + "/src/images",
+          from: __dirname + "/src/custom/images",
           to: "images",
         },
       ],
