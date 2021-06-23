@@ -5,7 +5,7 @@ import {
   introParagraph, // String or template string
   footerInfo, // String or template string
   footerCopyright, // String or template string
-} from "./contactInfo.js";
+} from "./custom/contactInfo.js";
 
 const setPageTitle = function () {
   document.title = webPageTitle;

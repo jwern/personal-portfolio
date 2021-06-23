@@ -1,7 +1,10 @@
 import { buildHeaderWithData } from "./header.js";
 import { createGalleryFromTemplate } from "./buildFromTemplate.js";
 import { createGalleryFromScratch } from "./alternativeTemplateBuild.js";
-import { professionalProjects, personalProjects } from "./projectsList.js";
+import {
+  professionalProjects,
+  personalProjects,
+} from "./custom/projectsList.js";
 import "./style.scss";
 
 const createProjectGallery = function () {
