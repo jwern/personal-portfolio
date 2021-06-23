@@ -1,22 +1,31 @@
+import { confirmOptions } from "./buildFromTemplate";
+
 // InnerHTML method - template string / template literal injection
 const buildProjectColumns = function (projectObject, rowName) {
   const projectColumn = document.createElement("div");
-  const projectColumnClasses = ["col-sm-6", "col-md-4", "mb-3"];
+  const projectColumnClasses = ["col-md-6", "col-xl-4", "mb-5"];
 
   for (let classType of projectColumnClasses) {
     projectColumn.classList.add(classType);
   }
 
   const projectColumnInner = `
-    <div class="project">
+    <div class="project" id="${projectObject.id}">
       <div class="project-image" style="background-image:url(${projectObject.desktopUrl})"><div class="project-tech">${projectObject.techDetails}</div></div>
-      <div class="project-name">${projectObject.title}</div>
-      <!-- Modal button -->
-      <button type="button" class="targetButton-desktop btn btn-primary" data-bs-toggle="modal" data-bs-target="#${projectObject.id}-desktop">
-        Desktop View
-      </button>
+      <div class="project-name project-spacer h5">${projectObject.title}</div>
+      <hr class="project-title-underline mx-auto project-spacer">
+      <!-- Modal buttons -->
+      <div class="button-row project-spacer">
+        <button type="button" class="targetButton-desktop btn btn-primary my-2" data-bs-toggle="modal" data-bs-target="#${projectObject.id}Modal-desktop">
+          ${projectObject.desktopButton}
+        </button>
+        <button type="button" class="targetButton-mobile btn btn-primary my-2" data-bs-toggle="modal" data-bs-target="#${projectObject.id}Modal-mobile">
+          ${projectObject.mobileButton}
+        </button>
+      </div>
+      <!-- End Modal buttons -->
       <!-- Desktop Modal -->
-      <div class="modal fade" id="${projectObject.id}-desktop" tabindex="-1" aria-labelledby="${projectObject.id}Label-desktop" aria-hidden="true">
+      <div class="modal fade" id="${projectObject.id}Modal-desktop" tabindex="-1" aria-labelledby="${projectObject.id}Label-desktop" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-xl">
           <div class="modal-content">
             <div class="modal-header">
@@ -34,13 +43,9 @@ const buildProjectColumns = function (projectObject, rowName) {
           </div>
         </div>
       </div>
-      <!-- End Modal -->
-      <!-- Modal button -->
-      <button type="button" class="targetButton-desktop btn btn-primary" data-bs-toggle="modal" data-bs-target="#${projectObject.id}-mobile">
-        Mobile View
-      </button>
+      <!-- End Modal --> 
       <!-- Mobile Modal -->
-      <div class="modal fade" id="${projectObject.id}-mobile" tabindex="-1" aria-labelledby="${projectObject.id}Label-mobile" aria-hidden="true">
+      <div class="modal fade" id="${projectObject.id}Modal-mobile" tabindex="-1" aria-labelledby="${projectObject.id}Label-mobile" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
@@ -59,7 +64,7 @@ const buildProjectColumns = function (projectObject, rowName) {
         </div>
       </div>
       <!-- End Modal -->
-      <div class="project-info">
+      <div class="project-info project-spacer">
         <a href="${projectObject.externalUrl}">${projectObject.externalLink}</a>
       </div>
     </div>
@@ -67,19 +72,28 @@ const buildProjectColumns = function (projectObject, rowName) {
 
   projectColumn.innerHTML = projectColumnInner;
 
-  const projectsRow = document.getElementById(rowName);
-  projectsRow.appendChild(projectColumn);
+  rowName.appendChild(projectColumn);
+
+  confirmOptions(projectObject);
 };
 
 const createGalleryFromScratch = function (
   professionalProjects,
   personalProjects
 ) {
-  for (let project of professionalProjects) {
-    buildProjectColumns(project, "professional-projects-row");
+  const professionalRow = document.getElementById("professional-projects-row");
+  const personalRow = document.getElementById("personal-projects-row");
+
+  if (professionalRow) {
+    for (let project of professionalProjects) {
+      buildProjectColumns(project, professionalRow);
+    }
   }
-  for (let project of personalProjects) {
-    buildProjectColumns(project, "personal-projects-row");
+
+  if (personalRow) {
+    for (let project of personalProjects) {
+      buildProjectColumns(project, personalRow);
+    }
   }
 };
 

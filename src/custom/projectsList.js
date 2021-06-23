@@ -4,7 +4,10 @@ The first project listed has comments on each section to clarify its purpose
 Six projects per section is just a template: 
 Feel free to add or remove projects from either array 
 
-Only values should be changed; do not update key names 
+If an array is empty, that section will be removed from the page
+(So you will never have a section header with no projects underneath)
+
+Only values should be changed; do not update or remove key names 
 unless you are updating them throughout the repo */
 
 const professionalProjects = [
@@ -17,9 +20,15 @@ const professionalProjects = [
     // desktopUrl should be the relative path from template.html to the desktop image for project
     // used on project card and desktop screenshot modal
     desktopUrl: "./images/desktop/desktop.png",
+    // desktopButton changes the text displayed on the desktop modal button
+    desktopButton: "Desktop View",
     // mobileUrl should be the relative path from template.html to the mobile image for project
     // used on mobile screenshot modal
     mobileUrl: "./images/mobile/mobile.png",
+    // mobileButton changes the text displayed on the mobile modal button
+    mobileButton: "Mobile View",
+    // Set showMobile to false if you don't want to display a mobile screenshot (will remove mobile modal & button)
+    showMobile: true,
     // externalLink is the text displayed at the bottom of the project card on its link out
     externalLink: "Link to Project",
     // externalUrl is where externalLink will send users that click
@@ -33,7 +42,10 @@ const professionalProjects = [
     title: "Project Two",
     id: "projectTwo",
     desktopUrl: "./images/desktop/desktop.png",
+    desktopButton: "!!!!! View",
     mobileUrl: "./images/mobile/mobile.png",
+    mobileButton: "Mobile View",
+    showMobile: true,
     externalLink: "Link to Project",
     externalUrl: "#",
     techDetails: `Details about the tech stack and processes used.`,
@@ -42,7 +54,10 @@ const professionalProjects = [
     title: "Project Three",
     id: "projectThree",
     desktopUrl: "./images/desktop/desktop.png",
+    desktopButton: "Yepper View",
     mobileUrl: "./images/mobile/mobile.png",
+    mobileButton: "??? View",
+    showMobile: true,
     externalLink: "Link to Project",
     externalUrl: "#",
     techDetails: `Details about the tech stack and processes used.`,
@@ -51,7 +66,10 @@ const professionalProjects = [
     title: "Project Four",
     id: "projectFour",
     desktopUrl: "./images/desktop/desktop.png",
+    desktopButton: "Desktop View",
     mobileUrl: "./images/mobile/mobile.png",
+    mobileButton: "Mobile View",
+    showMobile: true,
     externalLink: "Link to Project",
     externalUrl: "#",
     techDetails: `Details about the tech stack and processes used.`,
@@ -60,7 +78,10 @@ const professionalProjects = [
     title: "Project Five",
     id: "projectFive",
     desktopUrl: "./images/desktop/desktop.png",
+    desktopButton: "Desktop View",
     mobileUrl: "./images/mobile/mobile.png",
+    mobileButton: "Mobile View",
+    showMobile: true,
     externalLink: "Link to Project",
     externalUrl: "#",
     techDetails: `Details about the tech stack and processes used.`,
@@ -69,7 +90,10 @@ const professionalProjects = [
     title: "Proper Six",
     id: "projectSix",
     desktopUrl: "./images/desktop/desktop.png",
+    desktopButton: "Desktop View",
     mobileUrl: "./images/mobile/mobile.png",
+    mobileButton: "Mobile View",
+    showMobile: true,
     externalLink: "Link to Project",
     externalUrl: "#",
     techDetails: `Details about the tech stack and processes used.`,
@@ -81,7 +105,10 @@ const personalProjects = [
     title: "Project One",
     id: "projectOnePersonal",
     desktopUrl: "./images/desktop/desktop.png",
+    desktopButton: "Desktop View",
     mobileUrl: "./images/mobile/mobile.png",
+    mobileButton: "Mobile View",
+    showMobile: true,
     externalLink: "Link to Project",
     externalUrl: "#",
     techDetails: `Details about the tech stack and processes used.`,
@@ -90,7 +117,10 @@ const personalProjects = [
     title: "Project Two",
     id: "projectTwoPersonal",
     desktopUrl: "./images/desktop/desktop.png",
+    desktopButton: "Desktop View",
     mobileUrl: "./images/mobile/mobile.png",
+    mobileButton: "Mobile View",
+    showMobile: true,
     externalLink: "Link to Project",
     externalUrl: "#",
     techDetails: `Details about the tech stack and processes used.`,
@@ -99,7 +129,10 @@ const personalProjects = [
     title: "Project Three",
     id: "projectThreePersonal",
     desktopUrl: "./images/desktop/desktop.png",
+    desktopButton: "Desktop View",
     mobileUrl: "./images/mobile/mobile.png",
+    mobileButton: "Mobile View",
+    showMobile: false,
     externalLink: "Link to Project",
     externalUrl: "#",
     techDetails: `Details about the tech stack and processes used.`,
@@ -108,7 +141,10 @@ const personalProjects = [
     title: "Project Four",
     id: "projectFourPersonal",
     desktopUrl: "./images/desktop/desktop.png",
+    desktopButton: "Desktop View",
     mobileUrl: "./images/mobile/mobile.png",
+    mobileButton: "Mobile View",
+    showMobile: false,
     externalLink: "Link to Project",
     externalUrl: "#",
     techDetails: `Details about the tech stack and processes used.`,
@@ -117,7 +153,10 @@ const personalProjects = [
     title: "Project Five",
     id: "projectFivePersonal",
     desktopUrl: "./images/desktop/desktop.png",
+    desktopButton: "Desktop View",
     mobileUrl: "./images/mobile/mobile.png",
+    mobileButton: "Mobile View",
+    showMobile: true,
     externalLink: "Link to Project",
     externalUrl: "#",
     techDetails: `Details about the tech stack and processes used.`,
@@ -126,7 +165,10 @@ const personalProjects = [
     title: "Project Six",
     id: "projectSixPersonal",
     desktopUrl: "./images/desktop/desktop.png",
+    desktopButton: "Desktop View",
     mobileUrl: "./images/mobile/mobile.png",
+    mobileButton: "Mobile View",
+    showMobile: true,
     externalLink: "Link to Project",
     externalUrl: "#",
     techDetails: `Details about the tech stack and processes used.`,

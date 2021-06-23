@@ -2,6 +2,7 @@
 const createModal = function (project, projectObject, size) {
   const button = project.querySelector(`.targetButton-${size}`);
   button.setAttribute("data-bs-target", `#${projectObject.id}Modal-${size}`);
+  button.textContent = projectObject[`${size}Button`];
 
   const modal = project.getElementById(`placeholderTarget-${size}`);
   modal.id = `${projectObject.id}Modal-${size}`;
@@ -19,6 +20,9 @@ const createModal = function (project, projectObject, size) {
 };
 
 const createGalleryCard = function (project, projectObject) {
+  const projectOuter = project.querySelector(".project");
+  projectOuter.id = projectObject.id;
+
   const desktopImageTop = project.querySelector(".project-image");
   desktopImageTop.style.backgroundImage = `url(${projectObject.desktopUrl})`;
   desktopImageTop.addEventListener("click", () => {
@@ -42,6 +46,24 @@ const addProjectInfo = function (project, projectObject) {
   infoDiv.appendChild(infoLink);
 };
 
+// Remove elements set to 'false' in project options
+const confirmOptions = function (projectObject) {
+  const project = document.getElementById(projectObject.id);
+
+  if (!projectObject.showMobile) {
+    const buttonRow = project.querySelector(".button-row");
+    const mobileButton = project.querySelector(".targetButton-mobile");
+
+    buttonRow.removeChild(mobileButton);
+
+    const mobileModal = project.querySelector(
+      `#${projectObject.id}Modal-mobile`
+    );
+
+    project.removeChild(mobileModal);
+  }
+};
+
 // Template Method - Template cloning + card creation
 const copyProjectTemplate = function (projectObject, rowName) {
   // Project Top
@@ -55,20 +77,28 @@ const copyProjectTemplate = function (projectObject, rowName) {
 
   addProjectInfo(project, projectObject);
 
-  const projectsRow = document.getElementById(rowName);
-  projectsRow.appendChild(project);
+  rowName.appendChild(project);
+  confirmOptions(projectObject);
 };
 
 const createGalleryFromTemplate = function (
   professionalProjects,
   personalProjects
 ) {
-  for (let project of professionalProjects) {
-    copyProjectTemplate(project, "professional-projects-row");
+  const professionalRow = document.getElementById("professional-projects-row");
+  const personalRow = document.getElementById("personal-projects-row");
+
+  if (professionalRow) {
+    for (let project of professionalProjects) {
+      copyProjectTemplate(project, professionalRow);
+    }
   }
-  for (let project of personalProjects) {
-    copyProjectTemplate(project, "personal-projects-row");
+
+  if (personalRow) {
+    for (let project of personalProjects) {
+      copyProjectTemplate(project, personalRow);
+    }
   }
 };
 
-export { createGalleryFromTemplate };
+export { createGalleryFromTemplate, confirmOptions };
