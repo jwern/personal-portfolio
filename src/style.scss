@@ -108,7 +108,7 @@ hr.heading-underline {
   border: 2px solid $primary;
   border-radius: 0.25rem;
   overflow: hidden;
-  background-color: white;
+  background-color: $project-card-background;
   .project-spacer {
     margin: 1rem;
   }
@@ -135,7 +135,7 @@ hr.heading-underline {
       border-radius: 4px;
       visibility: hidden;
       transition: visibility 0.2s linear, background-color 0.25s linear;
-      color: white;
+      color: $project-tech-color;
     }
 
     &:hover,
