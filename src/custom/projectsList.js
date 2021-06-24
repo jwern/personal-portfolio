@@ -1,14 +1,16 @@
 /* The projects below have placeholder content that should be updated
 The first project listed has comments on each section to clarify its purpose
 
-Six projects per section is just a template: 
+The number of projects included is just an example: 
 Feel free to add or remove projects from either array 
 
 If an array is empty, that section will be removed from the page
 (So you will never have a section header with no projects underneath)
 
 Only values should be changed; do not update or remove key names 
-unless you are updating them throughout the repo */
+unless you are updating them throughout the repo 
+If you want to leave a property blank, keep the key
+and leave the value empty, e.g.: mobileUrl: ""; */
 
 const professionalProjects = [
   {
@@ -16,9 +18,11 @@ const professionalProjects = [
     title: "Project One",
     // id should be unique; no two projects should have the same id
     // will be used for connecting modals to projects
+    // id SHOULD NOT BE BLANK
     id: "projectOne",
     // desktopUrl should be the relative path from template.html to the desktop image for project
     // used on project card and desktop screenshot modal
+    // desktopUrl SHOULD NOT BE BLANK
     desktopUrl: "./images/desktop/desktop.png",
     // desktopButton changes the text displayed on the desktop modal button
     desktopButton: "Desktop View",
@@ -28,6 +32,7 @@ const professionalProjects = [
     // mobileButton changes the text displayed on the mobile modal button
     mobileButton: "Mobile View",
     // Set showMobile to false if you don't want to display a mobile screenshot (will remove mobile modal & button)
+    // Leave mobileUrl as an empty string if you don't want to include this
     showMobile: true,
     // externalLink is the text displayed at the bottom of the project card on its link out
     externalLink: "Link to Project",
@@ -42,21 +47,21 @@ const professionalProjects = [
     title: "Project Two",
     id: "projectTwo",
     desktopUrl: "./images/desktop/desktop.png",
-    desktopButton: "!!!!! View",
+    desktopButton: "Check It Out",
     mobileUrl: "./images/mobile/mobile.png",
-    mobileButton: "Mobile View",
+    mobileButton: "Check This Out",
     showMobile: true,
-    externalLink: "Link to Project",
+    externalLink: "Project Two GitHub",
     externalUrl: "#",
-    techDetails: `Details about the tech stack and processes used.`,
+    techDetails: `Project Two used a lot of interesting technologies and provided lots of challenges.`,
   },
   {
     title: "Project Three",
     id: "projectThree",
     desktopUrl: "./images/desktop/desktop.png",
-    desktopButton: "Yepper View",
+    desktopButton: "Desktop View",
     mobileUrl: "./images/mobile/mobile.png",
-    mobileButton: "??? View",
+    mobileButton: "Mobile View",
     showMobile: true,
     externalLink: "Link to Project",
     externalUrl: "#",

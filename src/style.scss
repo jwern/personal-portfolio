@@ -70,6 +70,7 @@ nav.navbar {
   .navbar-brand {
     font-size: 1.5rem;
     font-family: $logo-font;
+    color: $logo-color;
     transform: rotate(-8deg);
   }
   .navbar-toggler-icon {
@@ -167,20 +168,6 @@ hr.heading-underline {
     a {
       @include links-body();
     }
-    &:hover {
-      a {
-        margin-left: 1rem;
-      }
-      &::after {
-        background: transparent no-repeat right;
-        background-image: $mobile-hamburger-icon;
-        background-size: 0.75rem;
-        display: inline-block;
-        width: 1rem;
-        height: 1rem;
-        content: "";
-      }
-    }
   }
 }
 .modal {
@@ -193,6 +180,7 @@ hr.heading-underline {
 }
 .footer {
   background-color: $primary;
+  color: $footer-color;
   @include header-footer-shadow(-3px);
   padding-top: 12px;
   padding-bottom: 12px;
