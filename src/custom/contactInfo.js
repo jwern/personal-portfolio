@@ -1,4 +1,6 @@
-/* Personal info used in the header, footer, and intro paragraph
+/* CONTACT INFO README
+
+Update entries in this file to change info used in the header, footer, and intro paragraph
 All entries except footerInfo (credits) should be updated to display your personal details */
 
 // Title of the page / will appear on the browser tab
@@ -18,6 +20,7 @@ const navLinks = {
 };
 
 // Your intro paragraph
+// White space will be maintained
 const introParagraph = `
   This is my intro paragraph.
 
@@ -36,7 +39,7 @@ const footerInfo = `
 // Your name or company for the copyright -- content is copyrighted, not layout
 const footerCopyright = `<small>&copy; Copyright 2021, My Name</small>`;
 
-// Only change exports if you rename a variable or add a new element
+// DO NOT CHANGE unless you rename a variable or add a new element
 export {
   webPageTitle,
   navBrand,
