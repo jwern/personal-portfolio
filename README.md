@@ -20,7 +20,12 @@ The content of each of the features above is configurable through standalone fil
 
 ## Screenshots
 
+### Desktop
+
 ![Desktop view screenshot](/screenshots/portfolio_screenshot_desktop.png)
+
+### Mobile
+
 ![Mobile view screenshot](/screenshots/portfolio_screenshot_mobile.png)
 
 ## Getting Started
@@ -51,9 +56,9 @@ To build a **production** bundle, run:
 $ npm run build
 ```
 
-This will output your bundles to the `dist/` directory (it will create `dist/` if it doesn't exist yet). After running `npm run build`, in the dist/ folder you should see:
+This will output your bundles to the `dist/` directory (it will create `dist/` if it doesn't exist yet). After running `npm run build`, in the `dist/` folder you should see:
 
-- all files from [src/custom/images](src/custom/images) copied over to the dist/images directory
+- all files from [src/custom/images](src/custom/images) copied over to the `dist/images` directory
 - a single index.html file
 - a single main."hash".bundle.js file
 - a single style."hash".css file
@@ -68,7 +73,7 @@ There is a [src/custom/](src/custom) folder included. This folder, and its inclu
 
 ### images/
 
-The [images/](src/custom/images) folder is where you should add any project images you want to use in your portfolio, as well as any other assets (like a logo). The directory is set-up with two sub-folders, [desktop/](src/custom/images/desktop) and [mobile/]((src/custom/images/mobile), for simpler organization, but you don't have to use these and can delete them if preferred. Asset types that can go in this folder include .jpg, .svg, .png, .pdf, .gif.
+The [images/](src/custom/images) folder is where you should add any project images you want to use in your portfolio, as well as any other assets (like a logo). The directory is set up with two sub-folders -- [desktop/](src/custom/images/desktop) and [mobile/](src/custom/images/mobile) -- for simpler organization, but you don't have to use these and can delete them if preferred. Asset types that can go in this folder include .jpg, .svg, .png, .pdf, .gif.
 
 ### contactInfo.js
 
@@ -102,7 +107,7 @@ The file comments contain more details about each individual element.
 
 ### projectsList.js
 
-The [projectsList.js](src/custom/projectList.js) file is where your individual project details will live. This file is separated into two arrays of objects: `professionalProjects` and `personalProjects`.
+The [projectsList.js](src/custom/projectsList.js) file is where details about your individual projects will live. This file is separated into two arrays of objects: `professionalProjects` and `personalProjects`.
 
 Each project should be an object within one of these arrays. The object format is the following:
 
@@ -125,23 +130,24 @@ The information provided will be used to build the project's card and screenshot
 
 The file contains a few sample projects whose format you can copy, as well as a commented entry that explains where each property will be used. (I recommend just copy / pasting a sample object when adding a new project.) Everything except `showMobile` is a string: `desktopUrl` and `mobileUrl` should link to the images you uploaded for the project in [custom/images/](src/custom/images)
 
-Although showing a mobile screenshot is optional (via the `showMobile` boolean value), you will need to at least include a desktop screenshot as this is used for the card itself in the project gallery.
+Although showing a mobile screenshot is optional (via the `showMobile` boolean value), you should at least include a desktop screenshot as this is used for the card itself in the project gallery. An empty string for a value will not break the code, but it will cause less-than-desired results on some elements (e.g. if you don't have any text on a button, it will just be a tiny, empty button).
 
 ### customVariables.scss
 
 [customVariables.scss](src/custom/customVariables.scss) allows you to edit some of the CSS styles used in the portfolio. The customizable elements are:
 
 - Fonts (both the navbar logo font and body font used everywhere else)
-- Theme colors (all colors except the white background of the cards)
+- Theme colors (all colors except the background of the cards)
+- Default colors (card backgrounds, tech details text, copyright text)
 - Toggle icon on the mobile menu (when navbar links are collapsed)
 
-The default theme is grayscale: if you design a new three-color theme, you can just change the three color variables and all related elements will be updated.
+The default theme is grayscale: if you design a new three-color theme, you can just change the three theme color variables and all related elements will be updated.
 
 The file contains details on where each style is used. The variable names should not be changed, as they are referenced in [style.scss](src/style.scss).
 
 ## Recommendations
 
-This portfolio template relies heavily on JavaScript to produce the majority of its content -- as you can see above, the custom content files are JavaScript, which are injected into the DOM on the client's side. While it does use Babel (loaded via webpack) to compile ES6, it's still recommended only to use this template when you know its viewers will have JavaScript enabled.
+This portfolio template relies heavily on JavaScript to produce the majority of its content -- as you can see above, the custom content files are JavaScript, which are added to the DOM within the viewer's browser. While it does use Babel (loaded via webpack) to compile ES6, it's still recommended only to use this template when you know its viewers will have JavaScript enabled.
 
 As a backup, there is a `<noscript>` tag included in the intro section which reads:
 

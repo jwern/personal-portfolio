@@ -25,6 +25,8 @@ $primary: #eaeaea; // header & footer background, section dividers, project card
 $accent-one: #a9a9ab; // project title divider, project buttons background, tech details (on hover) background
 $accent-two: #69696b; // header & footer links, project links
 
+// The following are generally defaults / not considered part of the three-color scheme
+// But feel free to change them to whatever you like
 $logo-color: black; // the color of a text-based logo in the navbar
 $footer-color: $accent-two; // the color of the copyright text in the footer
 
