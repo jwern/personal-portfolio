@@ -20,7 +20,12 @@ The content of each of the features above is configurable through standalone fil
 
 ## Screenshots
 
+### Desktop
+
 ![Desktop view screenshot](/screenshots/portfolio_screenshot_desktop.png)
+
+### Mobile
+
 ![Mobile view screenshot](/screenshots/portfolio_screenshot_mobile.png)
 
 ## Getting Started
