@@ -18,6 +18,11 @@ The features of this portfolio include:
 
 The content of each of the features above is configurable through standalone files separated from the rest of the project's code. If you want to add your own nav links or intro text, etc., you don't need to edit the core HTML or JavaScript files.
 
+## Screenshots
+
+![Desktop view screenshot](/screenshots/portfolio_screenshot_desktop.png)
+![Mobile view screenshot](/screenshots/portfolio_screenshot_mobile.png)
+
 ## Getting Started
 
 To get started with the portfolio, clone this repo to your local directory.
